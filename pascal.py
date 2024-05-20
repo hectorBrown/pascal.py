@@ -134,8 +134,6 @@ def digit_to_string(digit):
 
 base = int(input(f"Enter base (maximum {62 + len(greek) + len(cyrillic)}): "))
 
-print(chr(int("0x03c2", base=16)))
-
 
 def tobase(n, base):
     if n == 0:
