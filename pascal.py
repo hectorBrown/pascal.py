@@ -1,5 +1,6 @@
 #!/bin/python
 import shutil
+import sys
 from math import factorial
 
 # print pascal's triangle
@@ -131,6 +132,12 @@ def digit_to_string(digit):
     elif digit < 62 + len(greek) + len(cyrillic):
         return cyrillic[digit - 62 - len(greek)]
 
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == "--charmap":
+        for i in range(62 + len(greek) + len(cyrillic)):
+            print(str(i) + ": " + digit_to_string(i))
+        exit(0)
 
 base = int(input(f"Enter base (maximum {62 + len(greek) + len(cyrillic)}): "))
 
